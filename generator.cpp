@@ -11,6 +11,9 @@ std::string generator_class::get_name()
 }
 void generator_class::create_files()
 {
+    if(name==""){
+        name="default";
+    }
     h_name=name+".h";
     h_file.open(h_name);
     std::cout<<"created: "<<h_name<<"\n";
@@ -20,9 +23,29 @@ void generator_class::create_files()
 }
 void generator_class::generate_text()
 {
+    /*name="butfuck";
+    h_text="#ifndef "+h_name+"_H_INCLUDED\n"+"#define "+h_name+"_H_INCLUDED\n";
+    h_text+="class "+name+"_class{\n\tprivate:\n\tpublic:\n\t\t"+name+"_class();\n\t\t~"+name+"_class();""\n};";
+    h_text+="\n#endif";*/
+    generate_h_file();
+    std::cout<<h_text<<"\n";
+}
+void generator_class::write_h_file()
+{
+    h_file<<h_text;
+}
+void generator_class::generate_h_file()
+{
     name="butfuck";
     h_text="#ifndef "+h_name+"_H_INCLUDED\n"+"#define "+h_name+"_H_INCLUDED\n";
     h_text+="class "+name+"_class{\n\tprivate:\n\tpublic:\n\t\t"+name+"_class();\n\t\t~"+name+"_class();""\n};";
     h_text+="\n#endif";
-    std::cout<<h_text<<"\n";
+}
+void generator_class::write_files()
+{
+    write_h_file();
+}
+void generator_class::generate_cpp_file()
+{
+
 }

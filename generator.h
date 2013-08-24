@@ -11,11 +11,16 @@ class generator_class{
         std::ofstream cpp_file;
         std::string h_name;
         std::string cpp_name;
+        void generate_h_file();
+        void write_h_file();
+        void generate_cpp_file();
     public:
         void read_name();
         std::string get_name();
         //bool create_files();
         void create_files();
         void generate_text();
+        //void write_h_file();
+        void write_files();
 };
 #endif // GENERATOR_H_INCLUDED
