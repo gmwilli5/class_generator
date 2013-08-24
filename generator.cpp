@@ -23,5 +23,6 @@ void generator_class::generate_text()
     name="butfuck";
     h_text="#ifndef "+h_name+"_H_INCLUDED\n"+"#define "+h_name+"_H_INCLUDED\n";
     h_text+="class "+name+"_class{\n\tprivate:\n\tpublic:\n\t\t"+name+"_class();\n\t\t~"+name+"_class();""\n};";
+    h_text+="\n#endif";
     std::cout<<h_text<<"\n";
 }
