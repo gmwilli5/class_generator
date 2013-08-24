@@ -28,6 +28,7 @@ void generator_class::generate_text()
     h_text+="class "+name+"_class{\n\tprivate:\n\tpublic:\n\t\t"+name+"_class();\n\t\t~"+name+"_class();""\n};";
     h_text+="\n#endif";*/
     generate_h_file();
+    generate_cpp_file();
     std::cout<<h_text<<"\n";
 }
 void generator_class::write_h_file()
@@ -44,8 +45,17 @@ void generator_class::generate_h_file()
 void generator_class::write_files()
 {
     write_h_file();
+    write_cpp_file();
 }
 void generator_class::generate_cpp_file()
 {
-
+    name="butfuck";
+    std::string ns=name+"::";
+    cpp_text="#include \""+h_name+"\"\n"+ns+name+"_class()\n{\n\n}\n";
+    cpp_text+=ns+"~"+name+"_class()\n{\n\n}\n";
+    std::cout<<cpp_text<<"\n";
+}
+void generator_class::write_cpp_file()
+{
+    cpp_file<<cpp_text;
 }

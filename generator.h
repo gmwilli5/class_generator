@@ -14,6 +14,7 @@ class generator_class{
         void generate_h_file();
         void write_h_file();
         void generate_cpp_file();
+        void write_cpp_file();
     public:
         void read_name();
         std::string get_name();
